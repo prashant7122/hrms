@@ -1,10 +1,11 @@
 import React from "react";
+import Header from "../../components/header/Header";
 
 const Home = () => {
 	console.log("Home");
 	return (
-		<div>
-			<h1>This is homepage</h1>
+		<div className="home">
+			<Header pageHeader="Dashboard"/>
 		</div>
 	);
 };

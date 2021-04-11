@@ -65,7 +65,7 @@ const DashboardLayout = ({ children }) => {
 					))}
 				</div>
 				<div className="image-container-small">
-					Add vector of your choice
+					Will add vector later
 				</div>
 			</nav>
 			<div className="main-container">{children}</div>
