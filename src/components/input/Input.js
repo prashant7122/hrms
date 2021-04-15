@@ -3,7 +3,7 @@ const defaultClasses = {
 	inputClassname: "",
 	labelClassname: "",
 	iconClassname: "",
-	inputComponenetClass: "",
+	inputComponentClass: "",
 	inputIconContainer: "",
 };
 const Input = ({
@@ -13,35 +13,43 @@ const Input = ({
 	label,
 	id,
 	icon,
-	classes={...defaultClasses},
+	classes = { ...defaultClasses },
 	placeholder,
-	onChange,
+	onChange = () =>{},
+	onFocus = () => {},
+	onBlur = () => {},
+	errors,
 }) => {
 	const {
 		inputClassname,
 		labelClassname,
 		iconClassname,
-		inputComponenetClass,
+		inputComponentClass,
 		inputIconContainer,
 	} = classes;
 	return (
-		<div className={`input-component ${inputComponenetClass}`}>
-			{label && (
-				<label className={`label ${labelClassname}`}>{label}</label>
-			)}
-			<div className={`input-icon-container ${inputIconContainer}`}>
-				<input
-					id={id}
-					className={`input ${inputClassname}`}
-					onChange={onchange}
-					type={type}
-					placeholder={placeholder}
-					value={value}
-					name={name}
-				/>
-				{icon}
+		<Fragment>
+			<div className={`input-component ${inputComponentClass}`}>
+				{label && (
+					<label className={`label ${labelClassname}`}>{label}</label>
+				)}
+				<div className={`input-icon-container ${inputIconContainer}`}>
+					<input
+						id={id}
+						className={`input ${inputClassname}`}
+						onChange={onChange}
+						type={type}
+						placeholder={placeholder}
+						value={value}
+						name={name}
+						onFocus={onFocus}
+						onBlur={onBlur}
+					/>
+					{icon}
+				</div>
 			</div>
-		</div>
+			{errors && <p className="input-error">{errors}</p>}
+		</Fragment>
 	);
 };
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import authenticate from '../../hoc/authentication'
 
 const Recruitment = () => {
     return (
@@ -8,4 +9,4 @@ const Recruitment = () => {
     )
 }
 
-export default Recruitment
+export default authenticate(Recruitment);

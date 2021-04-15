@@ -12,7 +12,7 @@ const Header = ({ pageHeader }) => {
 			</div>
 			<div style={{display:"flex", justifyContent: "space-between", width:"40%"}}>
 				<div className="action-container">
-					<Input placeholder="Search..." icon={<FiSearch />} classes={{inputComponenetClass:"hover-action"}}/>
+					<Input placeholder="Search..." icon={<FiSearch />} classes={{inputComponentClass:"hover-action"}}/>
 					<BiSend className="action-icon" />
 					<IoIosNotificationsOutline className="action-icon" />
 				</div>
